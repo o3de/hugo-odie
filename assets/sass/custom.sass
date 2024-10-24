@@ -17,55 +17,14 @@
 {{ $fontsUrl := printf "https://fonts.googleapis.com/css?family=%s" (delimit $fontSlice "|") }}
 @import url("{{ $fontsUrl }}")
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400500700800900&display=swap')
 
 {{ end }}
-
-// Required
-@import "bootstrap/scss/functions" 
-@import "bootstrap/scss/variables" 
-@import "bootstrap/scss/mixins" 
-@import "bootstrap/scss/root" 
-
-//Optional
-@import "bootstrap/scss/reboot" 
-@import "bootstrap/scss/type" 
-@import "bootstrap/scss/images" 
-@import "bootstrap/scss/code" 
-@import "bootstrap/scss/grid" 
-@import "bootstrap/scss/tables" 
-@import "bootstrap/scss/forms" 
-@import "bootstrap/scss/buttons" 
-@import "bootstrap/scss/transitions" 
-@import "bootstrap/scss/dropdown" 
-//@import "bootstrap/scss/button-group" 
-//@import "bootstrap/scss/input-group" 
-//@import "bootstrap/scss/custom-forms" 
-@import "bootstrap/scss/nav" 
-@import "bootstrap/scss/navbar" 
-@import "bootstrap/scss/card" 
-//@import "bootstrap/scss/breadcrumb" 
-//@import "bootstrap/scss/pagination" 
-//@import "bootstrap/scss/badge" 
-@import "bootstrap/scss/jumbotron" 
-//@import "bootstrap/scss/alert" 
-//@import "bootstrap/scss/progress" 
-@import "bootstrap/scss/media" 
-//@import "bootstrap/scss/list-group" 
-//@import "bootstrap/scss/close" 
-//@import "bootstrap/scss/toasts" 
-//@import "bootstrap/scss/modal" 
-//@import "bootstrap/scss/tooltip" 
-//@import "bootstrap/scss/popover" 
-@import "bootstrap/scss/carousel" 
-//@import "bootstrap/scss/spinners" 
-@import "bootstrap/scss/utilities" 
-//@import "bootstrap/scss/print" 
 
 // Variables 
 
 $font-family-headers: "Open Sans" 
-$font-family-Poppins: "Poppins", sans-serif;
+$font-family-Poppins: "Poppins", sans-serif
 $o3de-black: #000
 $o3de-white: #fff
 $o3de-lightgray: #ddd
@@ -79,6 +38,8 @@ $o3de-green: #58BD61
 $o3de-purple: #700AC7
 $o3de-aqua: #0AC1C7
 $o3de-game-gold: #D3B73C
+
+@import "./imports"
 
 .bg-warning
   background-color: $o3de-game-gold !important
@@ -265,15 +226,15 @@ code
 
 .card
   border: 2px solid  $o3de-lightgray
-  box-shadow: 0 2px 4px rgba(0,0,0,.1);
-  transition: all .3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,.1)
+  transition: all .3s ease
   &:hover
     border: 2px solid  $o3de-blue
 
 // additional button definitions
 
 .btn-primary
-  background: linear-gradient(0deg, #1E70EB 0%, #0095F2 100%);
+  background: linear-gradient(0deg, #1E70EB 0%, #0095F2 100%)
   border-color: #0095F2
   
   &:hover 
@@ -281,355 +242,23 @@ code
 
 .btn-green
   color: #fff
-  background: linear-gradient(0deg, #008525 0%, #00A62E 100%);
+  background: linear-gradient(0deg, #008525 0%, #00A62E 100%)
   border-color: #00A62E
     
   &:hover 
     background: darken(#008525, 10%)
 
-// layouts/partials/navbar.html 
-
-.main-navbar 
-  background-color: rgba(0, 0, 0, 0.9)
-  filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25))
-  padding: 1.25rem 1rem;
-
-.navbar-collapse
-  @include media-breakpoint-down(md)
-    position: absolute
-    right: 0
-    top: 62px
-
-
-.navbar-docs
-  background-color: $o3de-white
-
-.navbar-light .navbar-toggler
-  border: 0 none
-  padding: .25rem 0
-
-.navbar-light .navbar-nav
-  @include media-breakpoint-down(md)
-    padding: 8px 24px
-    background-color: #222
-
-.navbar-light .navbar-nav .nav-link
-  color: $o3de-white 
-  font-size: .9rem
-  line-height: 2.8
-  font-family: $font-family-Poppins
-  font-weight: 700
-  letter-spacing: 0.05rem;
-  transition: 300ms ease
-  &:hover 
-    color: $o3de-white 
-    opacity: 0.7
-
-
-.navbar-docs .navbar-nav .nav-link
-  text-transform: uppercase
-  color: $o3de-black
-  &:hover 
-    color: $o3de-black
-
-.navbar-light .navbar-nav li
-  display: inline-block
-  position: relative
-  margin-left: 20px
-
-.navbar-light .navbar-nav li.active
-  &:hover 
-    .nav-link.active
-      color: $o3de-black
-    div
-      background-color: $o3de-blue-highlight
-
-.navbar-light .navbar-nav li.active
-  &:hover 
-    .nav-link.active
-      color: $o3de-black
-    div
-      background-color: $o3de-lightgray
-
-.navbar-light .navbar-nav .nav-link.active
-  color: $o3de-black
-
-.navbar-light .navbar-nav li.active div
-  background-color: $o3de-aqua
-  padding-bottom: 4px
-  position: absolute
-  width: 100%
-  bottom: -11px
-  
-  @include media-breakpoint-down(md)
-    display: none
-
-.navbar-logo
-  max-height: 40px
-  color: #FFFFFF
-
-.subTitle
-  color: $o3de-black
-  position: absolute
-  top: 25px
-  margin-left: 15px
-
-.search
-  .form-control
-    @include media-breakpoint-down(sm)
-      width: 100px
-      margin-left: 10px
-  
-  #nav-search
-    margin-left: 5px
-
-#search-title
-  margin: 64px 0 32px
-
-
-// layouts/partials/navbar.html secondary
-
-.navbar-docs
-  ul
-    flex-direction: row;
-    margin-left: 3rem
-    
-    .nav-link
-      padding: 0
-
-  .secondary-toggler
-    margin-left: 1.25rem
-
-    @include media-breakpoint-down(lg)
-      display: none
-
-.navbar-primary
-  
-  .navbar-nav li.active div
-    bottom: -20px
-    
-  @include media-breakpoint-down(lg)
-    display: none !important
-
-.navbar-light .navbar-secondary
-  padding: 8px 0
-  background-color: $o3de-lightgray
-  position: absolute
-  right: 0
-  top: 80px
-  width: 214px
-  
-  @include media-breakpoint-down(lg)
-    display: none !important
-
-  ul
-    padding: 0 1rem
-    margin: 0
-
-    li
-      display: block
-      
-      a
-        color: $o3de-black
-        font-weight: 800
-        font-size: .9rem
-        text-transform: uppercase
-        padding: 0.5rem
-
-      .active
-        color: $o3de-blue-highlight
-
-        div
-          display: none
-
-.mobile-docs-toggler
-  .navbar-toggler-icon
-    font-size: 1.25rem
-    display: none
-    cursor: pointer
-    
-    @include media-breakpoint-down(lg)
-      display: block
-
-// layouts/partials/navbar.html build-info
-.build-info-text
-  margin-bottom: 0
-  text-align: center
-
-// layouts/partials/hero.html
-
-// banner
-a.top-banner
-  color: $o3de-white
-  background-color: rgba(112,10,199,0.9)
-  display: block
-  padding: 10px 0
-  transition: .2s ease
-  box-shadow: 0 0 10px rgba(0,0,0,.3)
-  position: relative
-  width: 100%
-  z-index: 1
-
-  &:hover 
-    background-color: darken($o3de-purple, 10%)
-
-  .top-notification
-    position: relative
-    padding: 0rem 1rem;
-
-    @include media-breakpoint-down(lg)
-      max-width: 100%
-
-    .banner-logo
-      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1058%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='rgba(148%2c 210%2c 255%2c 1)'%3e%3c/rect%3e%3cpath d='M 0%2c44 C 48%2c84.2 144%2c232.6 240%2c245 C 336%2c257.4 384%2c105.2 480%2c106 C 576%2c106.8 624%2c251.8 720%2c249 C 816%2c246.2 864%2c99.8 960%2c92 C 1056%2c84.2 1104%2c213.4 1200%2c210 C 1296%2c206.6 1392%2c102 1440%2c75L1440 560L0 560z' fill='rgba(42%2c 72%2c 117%2c 1)'%3e%3c/path%3e%3cpath d='M 0%2c409 C 72%2c418.6 216%2c464 360%2c457 C 504%2c450 576%2c379.8 720%2c374 C 864%2c368.2 936%2c437.4 1080%2c428 C 1224%2c418.6 1368%2c347.2 1440%2c327L1440 560L0 560z' fill='rgba(30%2c 112%2c 235%2c 1)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1058'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e")
-      background-size: 100% auto
-      float: left
-      width: 182px
-      height: 42px
-      margin-right: 32px;
-      background-repeat: no-repeat;
-      margin-left: 19px;
-
-      @include media-breakpoint-down(md)
-        display: none
-
-    .mobile-only
-      display: none
-
-      @include media-breakpoint-down(md)
-        display: inline
-
-    .desktop-only
-      display: inline
-
-      @include media-breakpoint-down(md)
-        display: none
-
-    .banner-title
-      font-weight: 700
-      font-family: $font-family-Poppins
-      font-size: .9rem
-      letter-spacing: 1px;
-
-    .banner-subtitle
-      font-size: .9rem
-      font-weight: 700
-      font-family: $font-family-Poppins
-      text-transform: uppercase
-      letter-spacing: 1px;
-      line-height: 1;
-
-    .banner-call-to-action
-      position: absolute
-      right: 66px
-      width: 140px;
-      top: 50%
-      transform: translate(0, -50%)
-      background: #fff
-      color: #652d90
-      padding: 3px 8px
-      font-size: .9rem
-      text-align: center
-      font-family: $font-family-Poppins
-      font-weight: 700
-      border-radius: 4px
-      transition: .2s ease
-      border: 2px solid $o3de-white
-      letter-spacing: 1.4px;
-
-      @include media-breakpoint-down(md)
-        right: 16px;
-        width: auto;
-
-      &:hover
-        border-color: $o3de-purple
 
 //scales the header proportionally
-$width: '59vw';
+$width: '59vw'
 
 .scalable 
     width: 100%
-    height: calc((#{$width} / 3) * 2); // note the variable is declared inside #${}
+    height: calc((#{$width} / 3) * 2) // note the variable is declared inside #${}
     background: black
     @include media-breakpoint-down(lg) 
       height: auto 
       background-position: right
-
-// layouts/partial/download/hero.html
-
-.download-hero 
-  background-image: url('/img/download/hero-bg.png')
-  background-size: cover
-  background-position: 50% 50%
-  max-height: 20rem
-
-  h4
-    max-width: 800px
-    font-weight: 300
-    margin: 2.5% auto 0
-    line-height: 2.5rem
-
-  @include media-breakpoint-down(md)
-    h1
-      font-size: 1.8rem
-      
-    h4
-      font-size: 1.25rem
-
-      
-    h5
-      font-size: .8rem
-
-$os-selector-height: 72px
-$os-selector-mobile-height: 48px
-
-.os-selector
-  overflow: visible
-  height: $os-selector-height / 2
-  
-  @include media-breakpoint-down(md)
-    height: $os-selector-mobile-height
-
-.os-selector-row
-  text-align: center
-  height: $os-selector-height
-  transform: translate(0, -50%)
-  -webkit-transform: translate(0, -50%)
-  
-  @include media-breakpoint-down(md)
-    height: $os-selector-mobile-height
-
-.os-selector-button
-  color: #000000
-  background-color: #EEEEEE
-  border-radius: 0 
-  cursor: pointer
-  width: 320px
-  margin: 0 8px
-  display: inline-block
-  height: 100%
-  line-height: $os-selector-height
-  font-size: 1.25rem
-  box-shadow: 0px 2px 4px 0px #0000001A;
-
-  &:hover
-    color: #000000
-    background-color: #E8E8E8
-
-  &.active
-    background-color: #FFFFFF
-    border-bottom: 3px solid #1E70EB
-    
-  @include media-breakpoint-down(md)
-    width: 128px
-    height: $os-selector-mobile-height
-    line-height: $os-selector-mobile-height
-
-.os-content
-  display: none
-
-.os-content.active
-  display: block
 
 .download_notes
   font-size: .85rem
@@ -678,117 +307,12 @@ $os-selector-mobile-height: 48px
   font-weight: 600
   color: $o3de-blue
 
-.active-os-cta
-  background-color: $o3de-blue
-  &:hover 
-    background-color: darken(#1E71EB, 10%)
-
-// Lightbox
-
-.lightbox-content
-  display: none
-  position: fixed
-  top: 0
-  left: 0
-  bottom: 0
-  right: 0
-  background: rgba(0,0,0,.75)
-  z-index: 5000
-
-  .lightbox-content-center
-    position: absolute
-    left: 50%
-    top: 50%
-    width: 72%
-    padding-bottom: 40%
-    transform: translate(-50%, -50%)
-    -webkit-transform: translate(-50%, -50%)
-
-    &::after
-      content: '+'
-      position: absolute
-      right: -40px
-      z-index: 5001
-      color: #fff
-      transform: rotate(45deg)
-      -webkit-transform: rotate(45deg)
-      font-size: 64px
-      line-height: 36px
-      top: 0
-      cursor: pointer
-
-    iframe
-      position: absolute
-      top: 0
-      left: 0
-      bottom: 0 
-      right: 0
-      width: 100%
-      height: 100%
-
-
-// layouts/footer.html 
-
-.footer
-  background-size: cover
-  background-color: $o3de-darkblue
-  a
-    color: $o3de-blue-highlight
-
-    &:hover, &:active
-      color: $o3de-mediumblue   
-      text-decoration: none
-
 // layouts/social-buttons.html 
 
 .social 
   font-size: 2rem
   padding: 0.5rem
 
-
-// layouts/community/section.html 
-
-.community-hero 
-  background-color: $o3de-darkblue
-  background-image: url('/images/community/community_hero_background.png')
-  background-size: cover
-  background-position: 50% 50%
-  color: $o3de-white
-
-  p
-    font-size: 1.5rem
-    font-weight: 200
-    max-width: 720px
-    margin: 0 auto
-
-.community-join
-  background-color: $o3de-white  
-  color: $o3de-black
-
-  .social-container
-    max-width: 640px
-
-  .icon 
-    font-size: 4rem
-  .social-name 
-    font-size: 1rem
-    vertical-align: text-top
-
-  .fa-github
-    color: #231E1B
-  .fa-discord
-    color: #7289DA
-  .fa-calendar-day
-    color: #2A4875
-  .fa-twitter
-    color: #2AA9E0
-  .fa-youtube
-    color: #ff0000
-  a
-    color: #1E70EB
-
-.community-blog
-  background: #111
 
 .card-stack
   a.card
@@ -814,24 +338,6 @@ $os-selector-mobile-height: 48px
     @include media-breakpoint-down(sm)
       padding-bottom: 14rem
 
-// layouts/contribute/section.html 
-
-.contribute-hero 
-  background-color: $o3de-darkblue
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1058%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='rgba(148%2c 210%2c 255%2c 1)'%3e%3c/rect%3e%3cpath d='M 0%2c44 C 48%2c84.2 144%2c232.6 240%2c245 C 336%2c257.4 384%2c105.2 480%2c106 C 576%2c106.8 624%2c251.8 720%2c249 C 816%2c246.2 864%2c99.8 960%2c92 C 1056%2c84.2 1104%2c213.4 1200%2c210 C 1296%2c206.6 1392%2c102 1440%2c75L1440 560L0 560z' fill='rgba(42%2c 72%2c 117%2c 1)'%3e%3c/path%3e%3cpath d='M 0%2c409 C 72%2c418.6 216%2c464 360%2c457 C 504%2c450 576%2c379.8 720%2c374 C 864%2c368.2 936%2c437.4 1080%2c428 C 1224%2c418.6 1368%2c347.2 1440%2c327L1440 560L0 560z' fill='rgba(30%2c 112%2c 235%2c 1)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1058'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e")
-  background-size: cover
-  background-position: 50% 50%
-  color: $o3de-white
-
-  p
-    font-size: 1.5rem
-    font-weight: 200
-    max-width: 800px
-    margin: 0 auto
-
-.contribute-section
-  margin-top: 10px
-
 .github-box
   background-color: #EAF6FF
   border-radius: 3px
@@ -849,31 +355,7 @@ $os-selector-mobile-height: 48px
   
   p
     font-size: .8rem
-  
-.contribute-sigs
-  width: 100%
-  display: block
 
-  .row
-    text-align: center
-  
-  .sig-card
-    text-align: center
-    display: inline-block
-    width: 15%
-    margin: 8px .5%
-    padding: 10px 0
-    border-color: #fff
-    @include media-breakpoint-down(lg)
-      width: 23%
-    @include media-breakpoint-down(sm)
-      width: 31%
-    @include media-breakpoint-down(xs)
-      width: 48%
-
-    &:hover
-      border-color: $o3de-blue
-      color: $o3de-blue
 
 // Blog
 
@@ -924,7 +406,7 @@ $os-selector-mobile-height: 48px
     width: 100%
 
     @include media-breakpoint-up(md)
-      position: absolute;
+      position: absolute
       left: 0
       top: 0
       bottom: 0
@@ -936,62 +418,6 @@ $os-selector-mobile-height: 48px
   background-size: cover
   background-position: 50% 50%
 
-// layouts/docs/single.html, layouts/docs/section.html 
-
-.docs-sidebar
-  background-color: rgba(30, 112, 235, 0.03)
-  padding: 20px 10px 20px 16px
-  
-  @include media-breakpoint-down(lg)
-    max-width: 280px
-
-  @include media-breakpoint-up(xl)
-    position: sticky
-    top: 4rem // this is recalculated in app.js updateSidebarAttributes() function
-    z-index: 1000
-    height: calc(100vh - 4rem) // this is recalculated in app.js updateSidebarAttributes() function
-    flex: 0 1 320px
-    order: 0
-    box-sizing: border-box
-    flex-wrap: wrap
-    overflow: auto
-
-  @include media-breakpoint-down(lg)
-    position: fixed
-    display: block
-    top: 80px
-    bottom: 0
-    z-index: 100
-    width: 360px
-    max-width: 100%
-    overflow-y: auto
-    background: #F8FAFE
-    right: -360px
-    opacity: 0
-    transition: all .3s ease
-
-body.docs-mobile-menu-open .docs-sidebar
-  @include media-breakpoint-down(lg)
-    opacity: 1
-    right: 0
-
-@include media-breakpoint-down(lg)
-  .docs-mobile-menu-overlay
-    position: fixed
-    top: 0
-    left: 0
-    right: 0
-    bottom: 0
-    background: rgba(0, 0, 0, .5)
-    content: ''
-    z-index: 99
-    display: none
-    transition: all .3s ease
-    opacity: 0
-
-    &.show
-      opacity: 1
-
 .edit-button-container
   text-align: right
   @include media-breakpoint-down(sm)
@@ -1001,219 +427,30 @@ body.docs-mobile-menu-open .docs-sidebar
     @include media-breakpoint-down(lg)
       transform: scale(.9)
 
-
-// layouts/section-nav.html version-switcher
-
-.version-switcher
-  font-size: 0.9rem
-
-  select
-    option
-      font-size: 0.8rem
-
-    option.selectedVersion
-      color: $o3de-blue
-      font-weight: bold
-
-// layouts/section-nav.html nav
-
-nav.docs-nav > ul > li:not(.currentAncestorCategory)
-    @include media-breakpoint-up(xl)
-      display: none
-
-nav.docs-nav
-  ul 
-    list-style: none
-    padding-left: 0
-    margin-bottom: 0rem
-    font-size: 1rem
-    
-    &.currentAncestor
-      display: block
-
-    li 
-      padding: 2px 0
-      font-weight: 600
-      position: relative
-
-      a
-        display: inline-block
-        padding: 3px 20px 3px 5px
-        color: #333
-        &:hover
-          color: $o3de-blue-highlight
-      
-      a.currentPage
-        border-radius: 3px
-        color: $o3de-blue
-        font-weight: 600
-        &:hover
-          color: $o3de-blue-highlight
-      
-      a.currentAncestor
-        font-weight: 600
-        color: $o3de-blue
-        &:hover
-          color: $o3de-blue-highlight
-        
-      a.currentAncestor.has-children::after
-        border-color: $o3de-blue
-
-      a.has-children:hover::after
-        border-color: $o3de-blue-highlight    
-
-      a.has-children-icon  
-        position: absolute  
-        right: 0px
-        top: 8px
-        &:after
-          position: absolute  
-          right: 5px
-          content: ''
-          width: 10px
-          height: 10px
-          transition: transform .5s ease
-          transform: rotate(-45deg)
-          border: 2px solid #333
-          border-left: 0
-          border-top: 0    
-        &:hover::after
-          cursor: pointer
-          border-color: $o3de-blue-highlight
-        
-      a.has-children-icon.open
-        &:after
-          transform: rotate(45deg) translate(-3px, -3px)
-        &:hover::after
-          border-color: $o3de-blue-highlight
-      
-      a.has-children-icon.currentPage
-        &:after
-          border-color: $o3de-blue
-        &:hover::after
-          border-color: $o3de-blue-highlight
-
-      a.has-children-icon.currentAncestor
-        &:after
-          border-color: $o3de-blue          
-        &:hover::after
-          border-color: $o3de-blue-highlight
-
-
-      ul
-        display: none
-        padding-bottom: 0rem
-        margin-left: 10px
-        font-size: 0.9rem
-        li 
-          border-bottom: none
-          margin-bottom: 0rem
-          font-weight: normal
-          
-          a.has-children::after
-            top: 10px
-
-// layouts/section-nav.html search
-
-.docs-sidebar form
-  padding: 0 4px 16px 0
-
-.docs-sidebar .search-input-view
-  padding: 0 !important
-  position: relative
-
-.docs-sidebar .search-input-view .search-icon
-  position: absolute
-  left: 6px
-  top: 5px
-  width: 20px
-  height: 20px
-
-.docs-sidebar .search-input-view input
-  padding-left: 30px
-
-
-// layouts/section-nav.html scrollbars
-
-@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white,  50%))
-  // For Google Chrome
-  &::-webkit-scrollbar
-    width:  $size;
-    height: $size;
-  
-  &::-webkit-scrollbar-thumb
-    background: $foreground-color
-  
-  &::-webkit-scrollbar-track
-    background: $background-color
-  
-  // For Internet Explorer
-  &
-    scrollbar-face-color: $foreground-color
-    scrollbar-track-color: $background-color
-
-.docs-sidebar
-  @include scrollbars(5px, $o3de-aqua, $o3de-lightgray)
-
-  
-// layouts/section-nav.html 
-
-.docs-right-toc
-  p
-    color: #000
-    border-left: 2px solid $o3de-lightgray
-    padding-left: 12px
-    margin: 0
-    font-size: 14px
-    font-weight: 600
-  
-  ul
-    padding: 6px 0 0
-    list-style: none
-    
-    li
-      margin: 0
-      font-size: 14px
-      line-height: 20px
-      padding: 6px 0 6px 12px
-
-      a
-        color: #444
-        font-weight: 500
-        
-      a:hover
-        color: $o3de-blue-highlight
-  
-.docs-right-toc > nav > ul
-  border-left: 2px solid $o3de-lightgray
-
-
-// layouts/partials/footer-content.html
-
-.footer-links
-  a
-    padding: 8px 16px 0 0
-    display: inline-block
-    @include media-breakpoint-down(sm)
-      display: block
-      
-.navbar-brand
-  padding-top: 0;
-  padding-bottom: 0;
-
 .home-page
   a.top-banner
     position: absolute
-    padding-bottom: 7px;
+    padding-bottom: 7px
 
   .vertical-text
-    writing-mode: vertical-lr;
+    writing-mode: vertical-lr
     color: #fff
     font-family: $font-family-Poppins
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 21px;
+    font-weight: 700
+    font-size: 14px
+    line-height: 21px
     position: absolute
     right: 30px
     top: 50%
     transform: translateY(-50%)  
+
+@import "./community"
+@import "./contribute"
+@import "./footer"
+@import "./heroes"
+@import "./lightbox"
+@import "./navbar"
+@import "./osSelector"
+@import "./sectionNav"
+@import "./sidebar"
+@import "./versionSwitcher"

@@ -1,0 +1,172 @@
+
+// layouts/section-nav.html nav
+
+nav.docs-nav > ul > li:not(.currentAncestorCategory)
+    @include media-breakpoint-up(xl)
+      display: none
+
+nav.docs-nav
+  ul 
+    list-style: none
+    padding-left: 0
+    margin-bottom: 0rem
+    font-size: 1rem
+    
+    &.currentAncestor
+      display: block
+
+    li 
+      padding: 2px 0
+      font-weight: 600
+      position: relative
+
+      a
+        display: inline-block
+        padding: 3px 20px 3px 5px
+        color: #333
+        &:hover
+          color: $o3de-blue-highlight
+      
+      a.currentPage
+        border-radius: 3px
+        color: $o3de-blue
+        font-weight: 600
+        &:hover
+          color: $o3de-blue-highlight
+      
+      a.currentAncestor
+        font-weight: 600
+        color: $o3de-blue
+        &:hover
+          color: $o3de-blue-highlight
+        
+      a.currentAncestor.has-children::after
+        border-color: $o3de-blue
+
+      a.has-children:hover::after
+        border-color: $o3de-blue-highlight    
+
+      a.has-children-icon  
+        position: absolute  
+        right: 0px
+        top: 8px
+        &:after
+          position: absolute  
+          right: 5px
+          content: ''
+          width: 10px
+          height: 10px
+          transition: transform .5s ease
+          transform: rotate(-45deg)
+          border: 2px solid #333
+          border-left: 0
+          border-top: 0    
+        &:hover::after
+          cursor: pointer
+          border-color: $o3de-blue-highlight
+        
+      a.has-children-icon.open
+        &:after
+          transform: rotate(45deg) translate(-3px, -3px)
+        &:hover::after
+          border-color: $o3de-blue-highlight
+      
+      a.has-children-icon.currentPage
+        &:after
+          border-color: $o3de-blue
+        &:hover::after
+          border-color: $o3de-blue-highlight
+
+      a.has-children-icon.currentAncestor
+        &:after
+          border-color: $o3de-blue          
+        &:hover::after
+          border-color: $o3de-blue-highlight
+
+
+      ul
+        display: none
+        padding-bottom: 0rem
+        margin-left: 10px
+        font-size: 0.9rem
+        li 
+          border-bottom: none
+          margin-bottom: 0rem
+          font-weight: normal
+          
+          a.has-children::after
+            top: 10px
+
+// layouts/section-nav.html search
+
+.docs-sidebar form
+  padding: 0 4px 16px 0
+
+.docs-sidebar .search-input-view
+  padding: 0 !important
+  position: relative
+
+.docs-sidebar .search-input-view .search-icon
+  position: absolute
+  left: 6px
+  top: 5px
+  width: 20px
+  height: 20px
+
+.docs-sidebar .search-input-view input
+  padding-left: 30px
+
+
+// layouts/section-nav.html scrollbars
+
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white,  50%))
+  // For Google Chrome
+  &::-webkit-scrollbar
+    width:  $size
+    height: $size
+  
+  &::-webkit-scrollbar-thumb
+    background: $foreground-color
+  
+  &::-webkit-scrollbar-track
+    background: $background-color
+  
+  // For Internet Explorer
+  &
+    scrollbar-face-color: $foreground-color
+    scrollbar-track-color: $background-color
+
+.docs-sidebar
+  @include scrollbars(5px, $o3de-aqua, $o3de-lightgray)
+
+  
+// layouts/section-nav.html 
+
+.docs-right-toc
+  p
+    color: #000
+    border-left: 2px solid $o3de-lightgray
+    padding-left: 12px
+    margin: 0
+    font-size: 14px
+    font-weight: 600
+  
+  ul
+    padding: 6px 0 0
+    list-style: none
+    
+    li
+      margin: 0
+      font-size: 14px
+      line-height: 20px
+      padding: 6px 0 6px 12px
+
+      a
+        color: #444
+        font-weight: 500
+        
+      a:hover
+        color: $o3de-blue-highlight
+  
+.docs-right-toc > nav > ul
+  border-left: 2px solid $o3de-lightgray

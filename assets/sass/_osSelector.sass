@@ -1,0 +1,51 @@
+
+$os-selector-height: 72px
+$os-selector-mobile-height: 48px
+
+.os-selector
+  overflow: visible
+  height: calc($os-selector-height / 2)
+  
+  @include media-breakpoint-down(md)
+    height: $os-selector-mobile-height
+
+.os-selector-row
+  text-align: center
+  height: $os-selector-height
+  transform: translate(0, -50%)
+  -webkit-transform: translate(0, -50%)
+  
+  @include media-breakpoint-down(md)
+    height: $os-selector-mobile-height
+
+.os-selector-button
+  color: #000000
+  background-color: #EEEEEE
+  border-radius: 0 
+  cursor: pointer
+  width: 320px
+  margin: 0 8px
+  display: inline-block
+  height: 100%
+  line-height: $os-selector-height
+  font-size: 1.25rem
+  box-shadow: 0px 2px 4px 0px #0000001A
+
+  &:hover
+    color: #000000
+    background-color: #E8E8E8
+
+  &.active
+    background-color: #FFFFFF
+    border-bottom: 3px solid #1E70EB
+    
+  @include media-breakpoint-down(md)
+    width: 128px
+    height: $os-selector-mobile-height
+    line-height: $os-selector-mobile-height
+
+.os-content
+  display: none
+
+.os-content.active
+  display: block

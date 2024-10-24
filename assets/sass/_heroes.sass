@@ -1,0 +1,39 @@
+// layouts/partial/download/hero.html
+
+.download-hero 
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1058%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='rgba(148%2c 210%2c 255%2c 1)'%3e%3c/rect%3e%3cpath d='M 0%2c44 C 48%2c84.2 144%2c232.6 240%2c245 C 336%2c257.4 384%2c105.2 480%2c106 C 576%2c106.8 624%2c251.8 720%2c249 C 816%2c246.2 864%2c99.8 960%2c92 C 1056%2c84.2 1104%2c213.4 1200%2c210 C 1296%2c206.6 1392%2c102 1440%2c75L1440 560L0 560z' fill='rgba(42%2c 72%2c 117%2c 1)'%3e%3c/path%3e%3cpath d='M 0%2c409 C 72%2c418.6 216%2c464 360%2c457 C 504%2c450 576%2c379.8 720%2c374 C 864%2c368.2 936%2c437.4 1080%2c428 C 1224%2c418.6 1368%2c347.2 1440%2c327L1440 560L0 560z' fill='rgba(30%2c 112%2c 235%2c 1)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1058'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e")
+  background-size: cover
+  background-position: 50% 50%
+  max-height: 20rem
+
+  h4
+    max-width: 800px
+    font-weight: 300
+    margin: 2.5% auto 0
+    line-height: 2.5rem
+
+  @include media-breakpoint-down(md)
+    h1
+      font-size: 1.8rem
+      
+    h4
+      font-size: 1.25rem
+
+      
+    h5
+      font-size: .8rem
+
+// layouts/contribute/section.html 
+
+.contribute-hero 
+  background-color: $o3de-darkblue
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1058%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='rgba(148%2c 210%2c 255%2c 1)'%3e%3c/rect%3e%3cpath d='M 0%2c44 C 48%2c84.2 144%2c232.6 240%2c245 C 336%2c257.4 384%2c105.2 480%2c106 C 576%2c106.8 624%2c251.8 720%2c249 C 816%2c246.2 864%2c99.8 960%2c92 C 1056%2c84.2 1104%2c213.4 1200%2c210 C 1296%2c206.6 1392%2c102 1440%2c75L1440 560L0 560z' fill='rgba(42%2c 72%2c 117%2c 1)'%3e%3c/path%3e%3cpath d='M 0%2c409 C 72%2c418.6 216%2c464 360%2c457 C 504%2c450 576%2c379.8 720%2c374 C 864%2c368.2 936%2c437.4 1080%2c428 C 1224%2c418.6 1368%2c347.2 1440%2c327L1440 560L0 560z' fill='rgba(30%2c 112%2c 235%2c 1)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1058'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e")
+  background-size: cover
+  background-position: 50% 50%
+  color: $o3de-white
+
+  p
+    font-size: 1.5rem
+    font-weight: 200
+    max-width: 800px
+    margin: 0 auto

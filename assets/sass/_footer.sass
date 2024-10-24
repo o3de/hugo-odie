@@ -1,0 +1,20 @@
+// layouts/footer.html 
+
+.footer
+  background-size: cover
+  background-color: $o3de-darkblue
+  a
+    color: $o3de-blue-highlight
+
+    &:hover, &:active
+      color: $o3de-mediumblue   
+      text-decoration: none
+
+// layouts/partials/footer-content.html
+
+.footer-links
+  a
+    padding: 8px 16px 0 0
+    display: inline-block
+    @include media-breakpoint-down(sm)
+      display: block
