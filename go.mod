@@ -1,1 +1,1 @@
-module github.com/shaunagordon/hugo-odie
+module github.com/o3de/hugo-odie
