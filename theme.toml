@@ -3,6 +3,9 @@ license = 'MIT'
 licenselink = 'https://github.com/o3de/hugo-odie/LICENSE'
 description = "The Hugo theme designed for Open 3D Engine's documentation site. Named for its mascot, Odie."
 
+# Minimum Version
+min_version = '0.139'
+
 # The home page of the theme, where the source can be found
 homepage = 'https://github.com/o3de/hugo-odie'
 
