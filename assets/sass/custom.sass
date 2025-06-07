@@ -444,6 +444,24 @@ $width: '59vw'
     top: 50%
     transform: translateY(-50%)  
 
+// layouts/partials/home/download.html 
+
+.home-download  
+  background-image: url('/img/home/download-bg.jpg')
+  background-size: cover
+  background-position: 50% 50%
+  text-align: center
+  color: $o3de-white
+
+.download-btn 
+  background-color: $o3de-blue
+  line-height: 1.5rem
+  padding-left: 24px
+  padding-right: 24px
+  &:hover 
+    background-color: darken(#1E71EB, 10%)
+
+
 @import "./community"
 @import "./contribute"
 @import "./footer"
