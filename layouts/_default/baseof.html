@@ -38,5 +38,8 @@
           {{ end }}
         {{ end}}
       </main>
+      {{ if .Param "math" }}
+			  {{ partialCached "math.html" . }}
+		  {{ end }}
   </body>
 </html>
