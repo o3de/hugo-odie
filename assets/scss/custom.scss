@@ -54,7 +54,7 @@ $o3de-game-gold: #D3B73C;
       line-height: 40px;
     }
   }
-}
+
 
   h2 {
     font-weight: 600;
@@ -567,13 +567,13 @@ $width: '59vw';
   }
 }
 
-@import "./community"
-@import "./contribute"
-@import "./footer"
-@import "./heroes"
-@import "./lightbox"
-@import "./navbar"
-@import "./osSelector"
-@import "./sectionNav"
-@import "./sidebar"
-@import "./versionSwitcher"
+@import "./community";
+@import "./contribute";
+@import "./footer";
+@import "./heroes";
+@import "./lightbox";
+@import "./navbar";
+@import "./osSelector";
+@import "./sectionNav";
+@import "./sidebar";
+@import "./versionSwitcher";
