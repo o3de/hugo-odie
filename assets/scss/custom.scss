@@ -2,7 +2,7 @@
 
 @use "hugo:vars" as h;
 
-@use "imports";
+@import "imports";
 
 @import url("#{h.$font_awesome_url}");
 
