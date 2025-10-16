@@ -1,5 +1,7 @@
 @charset "utf-8";
 
+@use "sass:color";
+
 @use "hugo:vars" as h;
 
 @import "imports";
@@ -281,7 +283,7 @@ code {
   border-color: #0095F2;
 
   &:hover {
-    background: darken(#1E70EB, 10%);
+    background: color.adjust(#1E70EB, $lightness: -10%);
   }
 }
 
@@ -291,7 +293,7 @@ code {
   border-color: #00A62E;
 
   &:hover {
-    background: darken(#008525, 10%);
+    background: color.adjust(#008525, $lightness: -10%);
   }
 }
 
@@ -563,7 +565,7 @@ $width: '59vw';
   padding-right: 24px;
 
   &:hover {
-    background-color: darken(#1E71EB, 10%);
+    background-color: color.adjust(#1E71EB, $lightness: -10%);
   }
 }
 

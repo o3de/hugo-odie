@@ -26,8 +26,25 @@
     "font_awesome_url" ($scratch.Get "font_awesome_url")
 }}
 
-{{- $devOpts      := (dict "transpiler" "dartsass" "targetPath" $cssOutput "includePaths" $includePaths "enableSourceMap" true "vars" $v) }}
-{{- $prodOpts     := (dict "transpiler" "dartsass" "targetPath" $cssOutput "includePaths" $includePaths "outputStyle" "compressed" "vars" $v) }}
+{{- $devOpts      := (dict 
+    "transpiler" "dartsass"
+    "targetPath" $cssOutput
+    "includePaths" $includePaths
+    "enableSourceMap" true
+    "vars" $v
+    "silenceDependencyDeprecations" true
+    ) 
+}}
+{{- $prodOpts     := (dict
+    "transpiler" "dartsass"
+    "targetPath" $cssOutput
+    "includePaths" $includePaths
+    "outputStyle" "compressed"
+    "silenceDependencyDeprecations" true
+    "vars" $v
+    )
+}}
+
 {{- $cssOpts      := cond $inServerMode $devOpts $prodOpts }}
 {{- $css := resources.Get $sass | css.Sass $cssOpts }}
 
