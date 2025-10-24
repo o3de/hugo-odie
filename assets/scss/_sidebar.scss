@@ -1,0 +1,64 @@
+// layouts/docs/single.html, layouts/docs/section.html
+
+.docs-sidebar {
+  background-color: rgba(30, 112, 235, 0.03);
+  padding: 20px 10px 20px 16px;
+
+  @include media-breakpoint-down(lg) {
+    max-width: 280px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    position: sticky;
+    top: 4rem; // this is recalculated in app.js updateSidebarAttributes() function
+    z-index: 1000;
+    height: calc(100vh - 4rem); // this is recalculated in app.js updateSidebarAttributes() function
+    flex: 0 1 320px;
+    order: 0;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    overflow: auto;
+  }
+
+  @include media-breakpoint-down(lg) {
+    position: fixed;
+    display: block;
+    top: 80px;
+    bottom: 0;
+    z-index: 100;
+    width: 360px;
+    max-width: 100%;
+    overflow-y: auto;
+    background: #F8FAFE;
+    right: -360px;
+    opacity: 0;
+    transition: all .3s ease;
+  }
+}
+
+body.docs-mobile-menu-open .docs-sidebar {
+  @include media-breakpoint-down(lg) {
+    opacity: 1;
+    right: 0;
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  .docs-mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .5);
+    content: '';
+    z-index: 99;
+    display: none;
+    transition: all .3s ease;
+    opacity: 0;
+
+    &.show {
+      opacity: 1;
+    }
+  }
+}

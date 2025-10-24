@@ -1,11 +1,53 @@
 {{- $inServerMode := hugo.IsServer }}
 {{- $includePaths := (slice "node_modules") }}
-{{- $sass         := "sass/custom.sass" }}
+{{- $sass         := "scss/custom.scss" }}
 {{- $cssOutput    := "css/style.css" }}
-{{- $devOpts      := (dict "transpiler" "dartsass" "targetPath" $cssOutput "includePaths" $includePaths "enableSourceMap" true) }}
-{{- $prodOpts     := (dict "transpiler" "dartsass" "targetPath" $cssOutput "includePaths" $includePaths "outputStyle" "compressed") }}
+
+{{- $fontAwesomeVersion := site.Params.font_awesome_version }}
+{{- $fonts := site.Params.fonts }}
+{{ $scratch := collections.NewScratch }}
+
+{{ with $fontAwesomeVersion }}
+  {{ $fontAwesomeUrl := printf "https://use.fontawesome.com/releases/v%s/css/all.css" . }}
+  {{ $scratch.Set "font_awesome_url" $fontAwesomeUrl }}
+{{ end }}
+
+{{ if $fonts }}
+  {{ $fontSlice := (slice) }}
+  {{ range $fonts }}
+    {{ $fontSlice = $fontSlice | append (printf "%s:%s" (replace .name " " "+") (delimit .sizes ",")) }}
+  {{ end }}
+  {{ $scratch.Set "fonts_url" (printf "https://fonts.googleapis.com/css?family=%s" (delimit $fontSlice "|")) }}
+{{ end }}
+
+
+{{- $v := dict 
+    "fonts_url" ($scratch.Get "fonts_url")
+    "font_awesome_url" ($scratch.Get "font_awesome_url")
+}}
+
+{{- $devOpts      := (dict 
+    "transpiler" "dartsass"
+    "targetPath" $cssOutput
+    "includePaths" $includePaths
+    "enableSourceMap" true
+    "vars" $v
+    "silenceDependencyDeprecations" true
+    ) 
+}}
+{{- $prodOpts     := (dict
+    "transpiler" "dartsass"
+    "targetPath" $cssOutput
+    "includePaths" $includePaths
+    "outputStyle" "compressed"
+    "silenceDependencyDeprecations" true
+    "vars" $v
+    )
+}}
+
 {{- $cssOpts      := cond $inServerMode $devOpts $prodOpts }}
-{{- $css          := resources.Get $sass | resources.ExecuteAsTemplate "blah.sass" . | toCSS $cssOpts }}
+{{- $css := resources.Get $sass | css.Sass $cssOpts }}
+
 {{- if $inServerMode }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}">
 {{- else }}
