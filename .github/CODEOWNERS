@@ -1,0 +1,27 @@
+# Default site owners
+# These owners will be requested for review unless a later match takes precedence.
+* @o3de/sig-docs-community-maintainers
+
+# Website Content
+/assets/ @o3de/sig-docs-community-site-reviewers
+/static/js/ @o3de/sig-docs-community-site-reviewers
+/package.json @o3de/sig-docs-community-site-reviewers
+
+# Community content
+/CONTRIBUTING.md @o3de/sig-docs-community-reviewers
+/README.md @o3de/sig-docs-community-reviewers
+
+# Docs content
+/layouts/shortcodes/ @o3de/sig-docs-community-reviewers @o3de/sig-docs-community-site-reviewers
+/layouts/docs/ @o3de/sig-docs-community-reviewers @o3de/sig-docs-community-site-reviewers
+/layouts/partials/docs @o3de/sig-docs-community-reviewers @o3de/sig-docs-community-site-reviewers
+
+# Foundation-owned materials
+/LICENSE-* @o3de/lf
+/_index.md @o3de/lf
+/static/images/events/ @o3de/lf
+/static/images/home/ @o3de/lf
+/static/img/ @o3de/lf
+/static/video/ @o3de/lf
+/static/apple-touch-icon*.png @o3de/lf
+/static/favicon.ico @o3de/lf
